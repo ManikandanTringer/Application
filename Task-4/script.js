@@ -23,6 +23,7 @@ function readFormData() {
 function insertNewRecord(data) {
     var table = document.getElementById("employeeList").getElementsByTagName('tbody')[0];
     var newRow = table.insertRow(table.length);
+    var cell1,cell2,cell3,cell4;
     cell1 = newRow.insertCell(0);
     cell1.innerHTML = data.fullName;
     cell2 = newRow.insertCell(1);
@@ -59,6 +60,7 @@ function updateRecord(formData) {
 }
 
 function onDelete(td) {
+    var row;
     if (confirm('Are you sure to delete this record ?')) {
         row = td.parentElement.parentElement;
         document.getElementById("employeeList").deleteRow(row.rowIndex);
@@ -66,7 +68,7 @@ function onDelete(td) {
     }
 }
 function validate() {
-    isValid = true;
+    var isValid = true;
     if (document.getElementById("fullName").value == "") {
         isValid = false;
         document.getElementById("fullNameValidationError").classList.remove("hide");
