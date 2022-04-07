@@ -68,7 +68,7 @@ function onDelete(td) {
     }
 }
 function validate() {
-    var isValid = true;
+    var isValid;
     if (document.getElementById("fullName").value == "") {
         isValid = false;
         document.getElementById("fullNameValidationError").classList.remove("hide");
